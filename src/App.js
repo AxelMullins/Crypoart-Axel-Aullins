@@ -1,25 +1,21 @@
-import logo from './nftlogo.png';
-import './App.css';
+//import { useState, useEffect } from "react"; //Crear un estado
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          eCommerce de NFT (sin estar dentro de la BlockChain)
-        </p>
-        <a
-          className="App-link"
-          href="https://www.larvalabs.com/cryptopunks"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Caso similar
-        </a>
-      </header>
-    </div>
-  );
+// CSS
+import "./App.css"
+
+// Components
+import Header from "./components/Header/Header";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+
+//import Container from "react-bootstrap/Container"; //Ver como importar
+
+const App = () => {
+    return (
+        <>
+            <Header />
+            <ItemListContainer />
+        </>
+        
+    )
 }
-
 export default App;
