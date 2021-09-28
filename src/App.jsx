@@ -13,7 +13,11 @@ const App = () => {
     return (
         <>
             <Header />
-            <ItemListContainer />
+            <ItemListContainer 
+                name="Robot T" 
+                id="00"
+                description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, voluptas?"
+            />
         </>
         
     )
