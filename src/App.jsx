@@ -1,25 +1,29 @@
-//import { useState, useEffect } from "react"; //Crear un estado
+import React from "react";
+// import { useState, useEffect } from "react"; //Crear un estado
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-// CSS
+// CSS particular
 import "./App.css"
 
-// Components
-import Header from "./components/Header/Header";
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+// CSS bootstrap
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import Container from "react-bootstrap/Container"
 
-//import Container from "react-bootstrap/Container"; //Ver como importar
+// Components
+import NavBar from "./components/NavBar/NavBar";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import ItemCount from "./components/ItemCount/ItemCount"
 
 const App = () => {
+    let titulo = "Tienda NFT"
+
     return (
         <>
-            <Header />
-            <ItemListContainer 
-                name="Robot T" 
-                id="00"
-                description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, voluptas?"
-            />
+            <NavBar />
+            <ItemListContainer title={titulo} />
+            <ItemCount />
         </>
-        
-    )
-}
+        );
+    }
+
 export default App;
