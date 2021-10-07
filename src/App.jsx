@@ -1,28 +1,26 @@
 import React from "react";
-// import { useState, useEffect } from "react"; //Crear un estado
-// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {BrowserRouter, Switch, Route} from "react-router-dom";
 
 // CSS particular
 import "./App.css"
-
-// CSS bootstrap
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import Container from "react-bootstrap/Container"
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/js/bootstrap.min.js"
 
 // Components
-import NavBar from "./components/NavBar/NavBar";
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import ItemCount from "./components/ItemCount/ItemCount"
+import Home from "./pages/Home";
+import Nosotros from "./pages/Nosotros";
+import Detalle from "./pages/Detalle";
 
 const App = () => {
-    let titulo = "Tienda NFT"
 
     return (
-        <>
-            <NavBar />
-            <ItemListContainer title={titulo} />
-            <ItemCount />
-        </>
+        <BrowserRouter>
+            <Switch>
+                <Route exact path="/" component={Home}></Route>
+                <Route exact path="/Nosotros" component={Nosotros}></Route>
+                <Route exact path="/Detalle/:id" component={Detalle}></Route>
+            </Switch>            
+        </BrowserRouter> 
         );
     }
 

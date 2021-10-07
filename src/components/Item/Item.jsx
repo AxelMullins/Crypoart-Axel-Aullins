@@ -1,30 +1,29 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import "./Item.css"
 
 const Item = (props) => {
 
     return(
-            <div className="col">
-                <div className="card img-thumbnail">
-                    <img className="card-img-top" 
-                        src={props.imgUrl} 
-                        alt={props.title}
-                    />
-                    <div className="card-body">
-                        <h5 className="card-title">
-                            {props.title}
-                        </h5>
-                        <p className="card-text">
-                            {props.description}
-                        </p>
-                        <h6 className="card-text">
-                            ${props.price}
-                        </h6>
-                        <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <a href="/" className="btn btn-success">Agregar al carrito</a>
-                        </div>                        
-                    </div>
+        <Link to={'/Detalle/'+props.id} className="col text-decoration-none text-black">
+            <div className="card img-thumbnail" id="cards">
+                <img className="card-img-top" src={props.imgUrl} alt={props.title} />
+                <div className="card-body">
+                    <h3 className="card-title">
+                        {props.title}
+                    </h3>
+                    <p className="card-text">
+                        {props.description}
+                    </p>
+                    <h6 className="card-text">
+                        id: {props.id}
+                    </h6>
+                    <h4 className="card-text float-end border border-1 rounded p-2">
+                        ${props.price}
+                    </h4>                        
                 </div>
-            </div>
+            </div>            
+        </Link>
     )
 }
 

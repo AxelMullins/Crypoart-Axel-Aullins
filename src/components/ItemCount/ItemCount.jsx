@@ -5,24 +5,32 @@ const ItemCount = () => {
 
     const [contador, setContador] = useState(0)
 
-    // useEffect(()=>{
-    //     console.log("Soy un efecto")
-    // },[])
+    useEffect(()=>{
+        console.log("Soy un efecto")
+    },[])
     
     const aumentar = () => {
         setContador(contador + 1)
     }
 
+    const restar = () => {
+        setContador(contador -1)
+        if (contador === 0) {
+            setContador(0)
+        }
+    }
+
     return(
-            <div className="container">
-                <button onClick={aumentar} type="button" className="btn btn-primary">
-                Agregar al carrito                
+            <div className="container my-3 border border-2 rounded d-flex justify-content-between align-items-center p-2">
+                <button onClick={restar} type="button" className="btn btn-secondary btn-sm">
+                -               
                 </button>
-                <i className="fas fa-shopping-cart fs-2 mx-4 position-relative">
-                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                <span className="">
                         {contador}                    
-                    </span>
-                </i>
+                </span>
+                <button onClick={aumentar} type="button" className="btn btn-secondary btn-sm">
+                +                
+                </button>
             </div>
     )
 }
