@@ -9,7 +9,7 @@ const Home = () => {
     let titulo = "Tienda NFT"
 
     return (
-            <div className="container-xl">
+            <div className="">
                 <NavBar />
                 <ItemListContainer title={titulo} />                
             </div>
