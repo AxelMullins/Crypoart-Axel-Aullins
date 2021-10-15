@@ -1,15 +1,13 @@
-import React from 'react'
-import NavBar from '../components/NavBar/NavBar';
-import ItemList from '../components/ItemList/ItemList';
+// import React from 'react'
 
-const Categoria = ({item}) => {
+// // Components
+// import ItemListContainer from '../components/ItemListContainer/ItemListContainer';
 
-    return (
-        <div>
-            <NavBar />
-            <ItemList category={item.category}/>
-        </div>
-    )
-}
+// const Categoria = () => {
 
-export default Categoria;
+//     return (        
+//         <ItemListContainer/>
+//     )
+// }
+
+// export default Categoria;

@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import { useParams } from 'react-router';
 import Item from '../Item/Item';
+import Loader from '../Loader/Loader';
 import { DB_NFT } from './DB_NFT'
 
 const ItemList = () => {
@@ -8,7 +9,7 @@ const ItemList = () => {
     const [items,setItems] = React.useState([]);
     const {id} = useParams()
 
-    const [estado,setEstado] = useState('Cargando...');
+    const [estado,setEstado] = useState(<Loader />);
 
     useEffect(() => {
         if(id){
@@ -18,18 +19,21 @@ const ItemList = () => {
                 },2000)
             })
             promesa.then(items => setItems(items))
+            promesa.finally( ()=>{
+                setTimeout(function(){ setEstado(""); ; }, 10)
+            })
         }else{
             const promesa = new Promise((resolve,reject) => {
                 setTimeout(() => {
-                    resolve(DB_NFT)
+                    resolve(DB_NFT);
                 },2000)
             })
             promesa.then(items => {
                 setItems(items)
-                setEstado('Listo!');
+                setEstado(<Loader />)
             })
             promesa.finally( ()=>{
-                setTimeout(function(){ setEstado(''); ; }, 2000);
+                setTimeout(function(){ setEstado(""); ; }, 10)
             })
         }
     },[id])
@@ -37,7 +41,7 @@ const ItemList = () => {
     return (
         <section className="my-5">
             <div className="container">        
-                <h3 className="my-4 text-center">{estado}</h3>
+                <span className="my-4 text-center">{estado}</span>
                 <div className="row row-cols-1 row-cols-md-3 g-4">
                     {(items !== null) && 
                             items.map( (item,index) =>
@@ -51,7 +55,7 @@ const ItemList = () => {
                                     category={item.category}
                                     stock={item.stock}
                                 />
-                    )} 
+                    )}
                 </div>
             </div>
         </section>
@@ -59,59 +63,3 @@ const ItemList = () => {
 }
 
 export default ItemList;
-
-/*
-// function comprobarError(){
-//     return (Math.random() < 0.1);
-// }
-
-// function crearPromesa() {
-//     return new Promise((resolve, reject) => {  
-
-//     setTimeout(
-//         function(){                
-//             const error = comprobarError();           
-//             if(!(error)){      
-//                 resolve(DB_NFT);  
-//             }
-//             else { 
-//                 reject( new Error("Error obteniendo los datos"));
-//             }
-//         }, 
-//         500);      
-//     });     
-// }
-
-// function crearPromesa() {
-//     return new Promise((resolve, reject) => {  
-
-//     const error = comprobarError();  
-    
-//         if(!(error)){      
-//             resolve(DB_NFT);  
-//         } else { 
-//             reject( new Error("Error obteniendo los datos"));
-//         }
-//     });     
-// }
-
-    // useEffect(() => {    
-    //     let requestDatos = crearPromesa();
-
-    //     requestDatos
-    //     .then( function(items_promise){
-    //         setItems(items_promise);     
-    //         setEstado('Listo!');           
-    //         console.log(items_promise);
-    //     })
-    //     .catch( function(err){
-    //         console.log(err);   
-    //         setEstado('Error');       
-    //     })
-    //     .finally( ()=>{
-    //             setTimeout(function(){ setEstado(''); ; }, 2000);
-    //         }
-    //     )
-    // }, []);
-
-*/

@@ -1,19 +1,20 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./NavBar.css"
 
 // Components
 import CartWidget from "./CartWidget"
 import logo from "../../assets/img/nftlogo.png"
 import { Link } from "react-router-dom";
-import { contexto } from '../../App'
 
 
 const NavBar = () => {
 
-    // 09
-    const resultado = useContext(contexto);
-    console.log(resultado);
+    const category1 = "Star-Wars"
+    const category2 = "Guardians-of-the-Galaxy"
 
+    // Clase 09
+    // const resultado = useContext(contexto);
+    // console.log(resultado);
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-white my-2 shadow-sm">
@@ -30,12 +31,12 @@ const NavBar = () => {
                             <Link className="nav-link active" aria-current="page" to="/">Inicio</Link>
                         </li>
                         <li className="nav-item dropdown">
-                            <Link className="nav-link dropdown-toggle" to="/Categorias" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <Link className="nav-link dropdown-toggle" to="/Categoria" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Categorías
                             </Link>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><Link className="dropdown-item" to="/Categorias/Star-Wars">Star Wars</Link></li>
-                                <li><Link className="dropdown-item" to="/Categorias/Guardians-of-the-Galaxy">Guardians of the Galaxy</Link></li>
+                                <li><Link className="dropdown-item" to={`/Categoria/${category1}`}>Star Wars</Link></li>
+                                <li><Link className="dropdown-item" to={`/Categoria/${category2}`}>Guardians of the Galaxy</Link></li>
                             </ul>
                         </li>
                         <li className="nav-item">

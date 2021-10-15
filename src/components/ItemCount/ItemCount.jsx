@@ -30,7 +30,7 @@ const ItemCount = ({stock, initial = 1, onAdd}) => {
                     <button onClick={restar} type="button" className="btn btn-secondary btn-sm">
                     -               
                     </button>
-                    <span className="">
+                    <span>
                             {contador}                    
                     </span>
                     <button onClick={aumentar} type="button" className="btn btn-secondary btn-sm">

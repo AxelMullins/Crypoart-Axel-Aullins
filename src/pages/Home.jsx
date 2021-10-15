@@ -1,16 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useParams } from "react-router";
+import { DB_NFT } from "../components/ItemList/DB_NFT";
 
 // Components
-import NavBar from "../components/NavBar/NavBar";
 import ItemListContainer from "../components/ItemListContainer/ItemListContainer";
-import ItemCount from "../components/ItemCount/ItemCount"
 
 const Home = () => {
-    let titulo = "Tienda NFT"
+
+    let titulo = "Tienda NFT"    
 
     return (
-            <div className="">
-                <NavBar />
+            <div>
                 <ItemListContainer title={titulo} />                
             </div>
     )

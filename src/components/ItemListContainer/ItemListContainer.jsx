@@ -6,11 +6,9 @@ const ItemListContainer = (titulo) => {
 
     return(
         <>
-            <div className="container">
-                <h1 className="border-bottom my-4 text-center">
-                    {titulo.title}       
-                </h1> 
-            </div>            
+            <h1 className="border-bottom my-4 text-center">
+                {titulo.title}
+            </h1> 
             <ItemList />
         </>
     )
