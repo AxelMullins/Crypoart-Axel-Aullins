@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { css } from "@emotion/react";
+import { PacmanLoader } from 'react-spinners';
+
+const override = css`
+    display: block;
+    margin: 0 auto;
+    `;
+
 
 const Loader = () => {
+
+    let [loading] = useState(true);
+    let [color] = useState("#dedede");
     return (
-            <div className="spinner-border d-grid gap-2 col-6 mx-auto my-5" role="status">
-                <span className="visually-hidden mx-auto">Cargando...</span>
-            </div>
-            
+        <div className="my-5" role="status">
+            <PacmanLoader color={color} loading={loading} css={override} size={40} margin={2} />
+        </div>
     )
 }
 

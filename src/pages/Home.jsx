@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
-import { useParams } from "react-router";
-import { DB_NFT } from "../components/ItemList/DB_NFT";
+import React from "react";
 
 // Components
 import ItemListContainer from "../components/ItemListContainer/ItemListContainer";

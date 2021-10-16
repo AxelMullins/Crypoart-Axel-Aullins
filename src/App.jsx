@@ -12,6 +12,8 @@ import Nosotros from "./pages/Nosotros";
 import Detalle from "./pages/Detalle";
 import Footer from "./components/Footer/Footer";
 import NavBar from "./components/NavBar/NavBar";
+import { CartProvider } from "./CartContext";
+import Cart from "./pages/Cart";
 
 // Clase 09
 // export const contexto = createContext({nombre:"Axel"})
@@ -22,6 +24,7 @@ const App = () => {
 
     return (
         <>
+        <CartProvider>
             <BrowserRouter>
             <NavBar />
                 <Switch>
@@ -29,10 +32,12 @@ const App = () => {
                     <Route exact path="/Nosotros" component={Nosotros}></Route>
                     <Route exact path="/Categoria/:id" component={Home}></Route>
                     <Route exact path="/Detalle/:id" component={Detalle}></Route>
-                    <Route exact path="/Cart/:id" component={Detalle}></Route>
+                    <Route exact path="/Cart" component={Cart}></Route>
                 </Switch>            
             </BrowserRouter> 
             <Footer />
+        </CartProvider>
+            
         </>
         );
     }

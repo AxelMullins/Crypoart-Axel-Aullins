@@ -4,14 +4,45 @@ import Item from '../Item/Item';
 import Loader from '../Loader/Loader';
 import { DB_NFT } from './DB_NFT'
 
+// import { firestoreNFT } from '../../firebase/firebase';
+
 const ItemList = () => {
 
     const [items,setItems] = React.useState([]);
     const {id} = useParams()
 
+    // const [estado,setEstado] = useState("");
+
+    // cambiar a "" cuando uso firebase
     const [estado,setEstado] = useState(<Loader />);
 
     useEffect(() => {
+
+        // const collection = firestoreNFT.collection("productos")
+        // // Hago consulta (get-where-doc-add)
+        // const query = collection.get()
+        // setEstado(<Loader />)
+
+        // query
+        //     .then((resultado) => {
+        //         const documentos = resultado.docs
+
+        //         const array_final_de_productos = []
+
+        //         documentos.forEach(producto => {
+        //             const id = producto.id
+        //             const el_resto = producto.data()
+        //             const producto_final = {id,...el_resto}
+        //             array_final_de_productos.push(producto_final)
+        //             setTimeout(function(){ setEstado(""); ; }, 10)
+        //         })
+
+        //         setItems(array_final_de_productos)
+        //     })
+        //     .catch(error => {
+        //         console.log(error)
+        //     })
+
         if(id){
             const promesa = new Promise((resolve,reject) => {
                 setTimeout(() => {
@@ -41,7 +72,7 @@ const ItemList = () => {
     return (
         <section className="my-5">
             <div className="container">        
-                <span className="my-4 text-center">{estado}</span>
+                {estado}
                 <div className="row row-cols-1 row-cols-md-3 g-4">
                     {(items !== null) && 
                             items.map( (item,index) =>

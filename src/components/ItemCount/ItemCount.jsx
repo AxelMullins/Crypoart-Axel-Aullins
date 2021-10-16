@@ -1,11 +1,11 @@
 import React from "react";
-import {useState,useEffect} from 'react'
+import {useState} from 'react'
 
 const ItemCount = ({stock, initial = 1, onAdd}) => {
 
     const [contador, setContador] = useState(initial)
 
-    useEffect(()=>{console.log("Soy un efecto")},[])
+    // useEffect(()=>{console.log("Soy un efecto")},[])
     
     const aumentar = () => {
         if (contador < stock) {
@@ -39,12 +39,8 @@ const ItemCount = ({stock, initial = 1, onAdd}) => {
             </div>
             <span className="py-3">
                     Stock disponible: {stock}
-            </span>
-            <div className="d-grid gap-2">
-                    <button onClick={agregar} className="btn btn-success">Agregar al carrito</button>
-            </div>
+            </span>            
         </>
-            
     )
 }
 

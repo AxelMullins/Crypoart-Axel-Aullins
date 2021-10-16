@@ -1,17 +1,34 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { CartContext } from '../../CartContext'
 import ItemCount from '../ItemCount/ItemCount'
-
 
 const ItemDetail = ({item}) => {
 
+    const [carrito, setCarrito]=useContext(CartContext)
+
+    const agregar = () => {
+        const producto ={
+            id:item.id,
+            category:item.category,
+            imgUrl:item.imgUrl,
+            price:item.price,
+            title:item.title,
+            description:item.description
+        }
+        const temp = carrito;
+        temp.push(producto);
+        setCarrito(temp)
+        console.log(carrito);
+    }
+
     const onAdd = (contador) => {
+        item.stock = -1;
         console.log("Item Detail")
         console.log(item)
         console.log(contador)
     }
 
     return (
-        <div>
             <div className="container-xl">
                 <div className="row my-5">
                     <div className="col-12 col-md-4">
@@ -38,13 +55,15 @@ const ItemDetail = ({item}) => {
                                 <h4 className="card-text py-3">
                                     ${item.price}
                                 </h4>
-                                <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />                                
+                                <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />  
+                                <div className="d-grid gap-2">
+                                    <button onClick={agregar} className="btn btn-success">Agregar al carrito</button>
+                                </div>                              
                             </div>                            
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     )
 }
 

@@ -10,6 +10,7 @@ const ItemDetailContainer = () => {
     const {id} = useParams()
 
     useEffect(()=>{
+        // firebase doc
 
         let pedido = new Promise((res,rej)=>{
             setTimeout(()=>{
