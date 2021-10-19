@@ -1,27 +1,47 @@
-import React from "react";
+import React, { useContext } from "react";
 import {useState} from 'react'
+import { CartContext } from "../../CartContext";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const ItemCount = ({stock, initial = 1, onAdd}) => {
+const ItemCount = ({stock, initial = 1, onAdd, item}) => {
 
-    const [contador, setContador] = useState(initial)
+    const alerta = () => toast("¡Producto agregado al carrito!");
 
-    // useEffect(()=>{console.log("Soy un efecto")},[])
+    const [quantity, setQuantity] = useState(initial)
+    const [carrito, setCarrito]=useContext(CartContext)
     
+    // Suma cantidad 
     const aumentar = () => {
-        if (contador < stock) {
-            setContador(contador + 1)
+        if (quantity < stock) {
+            setQuantity(quantity + 1)
         }
     }
 
+    // Resta cantidad
     const restar = () => {
-        setContador(contador -1)
-        if (contador === 1) {
-            setContador(1)
+        setQuantity(quantity -1)
+        if (quantity === 1) {
+            setQuantity(1)
         }
     }
 
     const agregar = () => {
-        onAdd(contador)
+        onAdd(quantity)
+
+        const producto ={
+            id:item.id,
+            category:item.category,
+            imgUrl:item.imgUrl,
+            price:item.price,
+            title:item.title,
+            description:item.description,
+            quantity:quantity
+        }
+        const temporal = carrito;
+        temporal.push(producto);
+        setCarrito(temporal);
+        console.log(carrito);
     }
 
     return (
@@ -31,7 +51,7 @@ const ItemCount = ({stock, initial = 1, onAdd}) => {
                     -               
                     </button>
                     <span>
-                            {contador}                    
+                            {quantity}                    
                     </span>
                     <button onClick={aumentar} type="button" className="btn btn-secondary btn-sm">
                     +                
@@ -39,7 +59,11 @@ const ItemCount = ({stock, initial = 1, onAdd}) => {
             </div>
             <span className="py-3">
                     Stock disponible: {stock}
-            </span>            
+            </span>  
+            <div className="d-grid gap-2">
+                    <button onClick={() => {agregar(); alerta()}} onAdd={onAdd} className="btn btn-success">Agregar al carrito</button>
+                    <ToastContainer />
+            </div>           
         </>
     )
 }

@@ -23,7 +23,6 @@ import Cart from "./pages/Cart";
 const App = () => {
 
     return (
-        <>
         <CartProvider>
             <BrowserRouter>
             <NavBar />
@@ -37,8 +36,6 @@ const App = () => {
             </BrowserRouter> 
             <Footer />
         </CartProvider>
-            
-        </>
         );
     }
 
