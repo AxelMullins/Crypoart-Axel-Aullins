@@ -3,27 +3,37 @@ import { CartContext } from '../CartContext'
 
 const Cart = () => {
 
-    const[carrito, limpiarCarrito] = useContext(CartContext)
+    const[carrito, setCarrito] = useContext(CartContext)
 
     // Precio total
     const [total,setTotal]=useState(0);
 
     useEffect(() => {
-        let total = 0;
+
+        let total = 0
         carrito.map((props)=>{
             return (
                 total = total + (props.price * props.quantity)
-            )            
+            )        
         });
 
         setTotal(total)
     }, [])
 
     // Borrar un producto particular
+    // const borrarProducto = (index) => {
+    //     let temporal = carrito;
+    //     temporal.splice(index, 0)
+    //     setTotal(temporal);
+    // }
     const borrarProducto = (index) => {
-        let temporal = carrito;
-        temporal.splice(index, 1)
-        setTotal(temporal);
+        let temporal = carrito.filter(producto => producto.item !== index);
+        setCarrito(temporal);
+        setTotal(temporal)
+    }
+
+    const limpiarCarrito = () => {
+        setCarrito([])
     }
 
     if (carrito.length !== 0) {
@@ -55,18 +65,14 @@ const Cart = () => {
                                                 {item.description}
                                             </p>
 
-                                            <p className="card-text">
-                                                {item.stock}
-                                            </p>
-
                                             <p>
                                                 Cantidad {item.quantity}
                                             </p>
                                             
                                             <h4 className="card-text py-3">
-                                                ${item.price}
+                                                $ {item.quantity * item.price} <small>(${item.price} c/u)</small> 
                                             </h4>  
-                                            <button className="btn btn-outline-warning" onClick={()=>{borrarProducto(index)}}><i class="far fa-trash-alt"></i></button>                            
+                                            <button className="btn btn-outline-warning" onClick={ () => borrarProducto(index) }><i className="far fa-trash-alt"></i></button>                         
                                         </div>                            
                                     </div>
                                 </div>
@@ -74,7 +80,7 @@ const Cart = () => {
                         </div>                   
                     )                
                 })}
-                <p className="text-end">Total a pagar: <b> ${total} </b></p>
+                <p className="text-end">Total a pagar: <b> ${ total } </b></p>
                 <div className="d-grid mb-5 gap-2">
                 <button className="btn btn-success">Ir a Pagar</button>
                 <button onClick={limpiarCarrito} className="btn btn-secondary">Limpiar carrito</button>

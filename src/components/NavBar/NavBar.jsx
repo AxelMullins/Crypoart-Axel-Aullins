@@ -12,10 +12,6 @@ const NavBar = () => {
     const category1 = "Star-Wars"
     const category2 = "Guardians-of-the-Galaxy"
 
-    // Clase 09
-    // const resultado = useContext(contexto);
-    // console.log(resultado);
-
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-white my-2 shadow-sm">
             <div className="container">

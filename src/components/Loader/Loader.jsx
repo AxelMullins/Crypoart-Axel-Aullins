@@ -7,7 +7,6 @@ const override = css`
     margin: 0 auto;
     `;
 
-
 const Loader = () => {
 
     let [loading] = useState(true);

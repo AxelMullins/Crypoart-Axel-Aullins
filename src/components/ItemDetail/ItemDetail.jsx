@@ -3,9 +3,9 @@ import ItemCount from '../ItemCount/ItemCount'
 
 const ItemDetail = ({item}) => {
 
-    const onAdd = () => {
-        item.stock = -1;
-    }
+    // const onAdd = () => {
+    //     console.log(item.stock)
+    // }
 
     return (
             <div className="container-xl">
@@ -34,7 +34,8 @@ const ItemDetail = ({item}) => {
                                 <h4 className="card-text py-3">
                                     ${item.price}
                                 </h4>
-                                <ItemCount stock={item.stock} initial={1} onAdd={onAdd} item={item}/>
+                                <ItemCount stock={item.stock} initial={1} item={item}/>
+                                {/* <ItemCount stock={item.stock} initial={1} onAdd={onAdd} item={item}/> */}
                             </div>                            
                         </div>
                     </div>
