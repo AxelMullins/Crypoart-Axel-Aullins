@@ -1,7 +1,7 @@
 import React from "react";
 
 // Components
-import ItemListContainer from "../components/ItemListContainer/ItemListContainer";
+import ItemListContainer from "../components/ItemListContainer";
 
 const Home = () => {
 

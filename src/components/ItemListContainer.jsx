@@ -1,6 +1,4 @@
-
-import "./ItemListContainer.css"
-import ItemList from "../ItemList/ItemList";
+import ItemList from "./ItemList";
 
 const ItemListContainer = (titulo) => {
 

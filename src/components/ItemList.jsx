@@ -1,8 +1,8 @@
 import React, {useState,useEffect} from 'react';
 import { useParams } from 'react-router';
-import Item from '../Item/Item';
-import Loader from '../Loader/Loader';
-import { firestoreNFT } from '../../firebase/firebase';
+import Item from './Item';
+import Loader from './Loader';
+import { firestoreNFT } from '../firebase/firebase';
 
 const ItemList = () => {
 

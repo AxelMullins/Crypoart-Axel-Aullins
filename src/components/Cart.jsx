@@ -1,40 +1,22 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { CartContext } from '../CartContext'
+import React, { useEffect, useState } from 'react'
+import useCartContext from '../context/CartContext'
 
 const Cart = () => {
 
-    const[carrito, setCarrito] = useContext(CartContext)
+    const {carrito, limpiarCarrito, borrarProducto} = useCartContext();
 
-    // Precio total
-    const [total,setTotal]=useState(0);
+    const [total, setTotal]= useState(0);
 
     useEffect(() => {
 
         let total = 0
-        carrito.map((props)=>{
+        carrito.map((props) => {
             return (
                 total = total + (props.price * props.quantity)
             )        
         });
-
         setTotal(total)
-    }, [])
-
-    // Borrar un producto particular
-    // const borrarProducto = (index) => {
-    //     let temporal = carrito;
-    //     temporal.splice(index, 0)
-    //     setTotal(temporal);
-    // }
-    const borrarProducto = (index) => {
-        let temporal = carrito.filter(producto => producto.item !== index);
-        setCarrito(temporal);
-        setTotal(temporal)
-    }
-
-    const limpiarCarrito = () => {
-        setCarrito([])
-    }
+    }, [borrarProducto])
 
     if (carrito.length !== 0) {
 
@@ -42,7 +24,7 @@ const Cart = () => {
             <div className="container-xl">
                 {carrito.map((item, index) => {
                     return (
-                        <div key="index" className="container-xl">
+                        <div key={item.id} className="container-xl">
                             <div className="row my-5">
                                 <div className="col-12 col-md-2">
                                     <div className="card img-thumbnail">
@@ -61,18 +43,23 @@ const Cart = () => {
                                                 </h6>
                                             </div>
                                             
-                                            <p className="card-text">
-                                                {item.description}
-                                            </p>
-
+                                            <div className="d-flex justify-content-between">
+                                                <p className="card-text">
+                                                    {item.description}
+                                                </p>
+                                                <button className="btn btn-outline-warning" 
+                                                onClick={ () => borrarProducto(item.id) }>
+                                                    <i className="far fa-trash-alt"></i>
+                                                </button>
+                                            </div>
+                                            
                                             <p>
-                                                Cantidad {item.quantity}
+                                                Cantidad: {item.quantity}
                                             </p>
                                             
                                             <h4 className="card-text py-3">
                                                 $ {item.quantity * item.price} <small>(${item.price} c/u)</small> 
-                                            </h4>  
-                                            <button className="btn btn-outline-warning" onClick={ () => borrarProducto(index) }><i className="far fa-trash-alt"></i></button>                         
+                                            </h4>
                                         </div>                            
                                     </div>
                                 </div>
@@ -80,7 +67,7 @@ const Cart = () => {
                         </div>                   
                     )                
                 })}
-                <p className="text-end">Total a pagar: <b> ${ total } </b></p>
+                <p className="text-end">Total a pagar: <b> ${total} </b></p>
                 <div className="d-grid mb-5 gap-2">
                 <button className="btn btn-success">Ir a Pagar</button>
                 <button onClick={limpiarCarrito} className="btn btn-secondary">Limpiar carrito</button>

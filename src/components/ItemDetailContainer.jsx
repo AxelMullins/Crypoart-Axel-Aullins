@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
-import ItemDetail from '../ItemDetail/ItemDetail'
-import Loader from '../Loader/Loader'
-import { firestoreNFT } from '../../firebase/firebase';
+import ItemDetail from './ItemDetail'
+import Loader from './Loader'
+import { firestoreNFT } from '../firebase/firebase';
 
 const ItemDetailContainer = () => {
 

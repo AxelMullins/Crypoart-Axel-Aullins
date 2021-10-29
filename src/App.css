@@ -6,3 +6,32 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
+/* NavBar */
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+i {
+    color: black;
+    font-size: 1.4em;
+}
+
+i:hover{
+    transform: scale(1.2);
+}
+
+/* Items */
+#cards:hover {
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+}

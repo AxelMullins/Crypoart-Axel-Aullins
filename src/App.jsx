@@ -9,11 +9,11 @@ import "bootstrap/dist/js/bootstrap.min.js"
 // Components
 import Home from "./pages/Home";
 import Nosotros from "./pages/Nosotros";
-import Footer from "./components/Footer/Footer";
-import NavBar from "./components/NavBar/NavBar";
-import { CartProvider } from "./CartContext";
-import Cart from "./pages/Cart";
-import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import Footer from "./components/Footer";
+import NavBar from "./components/NavBar";
+import { CartProvider } from "./context/CartContext";
+import ItemDetailContainer from "./components/ItemDetailContainer";
+import Cart from "./components/Cart";
 
 const App = () => {
 
