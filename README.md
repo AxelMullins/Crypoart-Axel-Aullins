@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Ecommerce de NFT (Curso de React Js - CoderHouse)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Se trata de un proyecto tipo tienda online, en donde al ingresar en la Home se muestran todos los items/productos disponibles, los mismos están conectados por Firebase.
+- Al hacer navegar con el menú, se puede filtrar por categorías de productos (posee 2)
+- Si se le hace click a cualquier card, se dirige al detalle particular, en donde se pueden visualizar todas las características, definir la cantidad y agregar al carrito.
+- En la parte superior, se ubica el CartWidget, el cual se va actualizando al incorporar/borrar un producto al carrito de la misma categoría.
+- Al ingresar al carrito de compras, nos encontramos con una lista de todos los productos agregados al mismo y la información del precio total. Aquí podemos borrar un producto en particular, borrar todos los productos o proceder con la compra.
+- El formulario de compra toma los datos del comprador (nombre - teléfono - email) los cuales son campos requeridos, y luego se le pide validar el "captcha" al usuario. En caso de estar todo correcto se habilita el botón
+ de "Enviar". El formulario esta vinculado con la API de WhatsApp, en donde se están tomando todos los datos ingresados por el usuario más los datos de su pedido (carrito) y se incorporan mediante una función al link de la API, de este modo se abre WhatsApp Web (o directamente WhatsApp en caso de estar desde un celular) con un mensaje automático.
+- Al finalizar la compra, se borra el carrito, se le da las gracias al usuario y se le brinda el nro de orden.
 
-## Available Scripts
+## Hooks:
+- useState
+- useEffect
+- useParams
+- useContext
 
-In the project directory, you can run:
+## Routing:
+- BrowserRouter
+- Switch
+- Route
+
+## Librerías:
+- [Bootstrap 5](https://getbootstrap.com/) (framework)
+- [Fontawesome](https://fontawesome.com/) (iconos)
+- [React-router-dom](https://www.npmjs.com/package/react-router-dom) (navegación).
+- [React-toastify](https://www.npmjs.com/package/react-toastify) (notificaciones).
+- [React-spinners](https://www.npmjs.com/package/react-spinners) (loaders)
+- [React-google-recaptcha](https://www.npmjs.com/package/react-google-recaptcha) (captcha de Google)
+
+## Comandos disponibles
+
+Al tener el proyecto en tu directorio, podes utilizar los siguientes comandos:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
+Ejecuta la aplicación en el modo de desarrollo.\
+Abrir [http://localhosst:3000](http://localhost:3000) para verla en el navegador.
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Crea la aplicación para producción en la carpeta `build`

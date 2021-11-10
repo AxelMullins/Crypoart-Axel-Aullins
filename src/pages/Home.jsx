@@ -9,7 +9,7 @@ const Home = () => {
 
     return (
             <div>
-                <ItemListContainer title={titulo} />                
+                <ItemListContainer title={titulo} />                             
             </div>
     )
 }

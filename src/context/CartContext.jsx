@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 
 const CartContext = createContext();
 
@@ -9,6 +9,7 @@ export const CartProvider = ( {children} ) => {
     const [carrito, setCarrito] = useState([])
     const [prodStock, setProdStock] = useState(0)
     const [items, setItems] = useState(0)
+    const [total, setTotal]= useState(0);
 
     const addItem = ({id, description, title, imgUrl, category, price, quantity}) => {
 
@@ -53,6 +54,17 @@ export const CartProvider = ( {children} ) => {
         setItems(items -1)
     }
 
+    useEffect(() => {
+
+        let total = 0
+        carrito.map((props) => {
+            return (
+                total = total + (props.price * props.quantity)
+            )        
+        });
+        setTotal(total)
+    }, [borrarProducto])
+
     return (
         <CartContext.Provider 
             value=
@@ -62,7 +74,8 @@ export const CartProvider = ( {children} ) => {
             isInCart,
             limpiarCarrito,
             borrarProducto,
-            items
+            items,
+            total
             }}>
 
             {children}

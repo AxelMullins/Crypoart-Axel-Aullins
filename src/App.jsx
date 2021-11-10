@@ -14,6 +14,7 @@ import NavBar from "./components/NavBar";
 import { CartProvider } from "./context/CartContext";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Cart from "./components/Cart";
+import CartForm from "./components/CartForm";
 
 const App = () => {
 
@@ -27,6 +28,7 @@ const App = () => {
                         <Route exact path="/Categoria/:id" component={Home}></Route>
                         <Route exact path="/Detalle/:id" component={ItemDetailContainer}></Route>
                         <Route exact path="/Cart" component={Cart}></Route>
+                        <Route exact path="/CartForm" component={CartForm}></Route>
                     </Switch> 
                 <Footer />            
             </BrowserRouter>

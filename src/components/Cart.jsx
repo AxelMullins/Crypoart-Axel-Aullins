@@ -1,22 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom';
 import useCartContext from '../context/CartContext'
 
 const Cart = () => {
 
-    const {carrito, limpiarCarrito, borrarProducto} = useCartContext();
-
-    const [total, setTotal]= useState(0);
-
-    useEffect(() => {
-
-        let total = 0
-        carrito.map((props) => {
-            return (
-                total = total + (props.price * props.quantity)
-            )        
-        });
-        setTotal(total)
-    }, [borrarProducto])
+    const {carrito, limpiarCarrito, borrarProducto, total} = useCartContext();
 
     if (carrito.length !== 0) {
 
@@ -69,10 +57,10 @@ const Cart = () => {
                 })}
                 <p className="text-end">Total a pagar: <b> ${total} </b></p>
                 <div className="d-grid mb-5 gap-2">
-                <button className="btn btn-success">Ir a Pagar</button>
+                <Link className="btn btn-success" to="/CartForm">Ir a Pagar</Link>
                 <button onClick={limpiarCarrito} className="btn btn-secondary">Limpiar carrito</button>
                 </div>
-            </div>
+            </div>            
         )
     } else {
         return (
