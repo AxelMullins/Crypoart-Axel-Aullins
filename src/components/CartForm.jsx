@@ -17,7 +17,7 @@ const CartForm = () => {
         carrito.map((props) => {
             return (
                 pedido = pedido + 
-                ("- " + props.title + " (cantidad: " + props.quantity + ", precio unitario: $" + props.price + ");" + "%0a"),
+                ("- " + props.title + " (cantidad: " + props.quantity + ", precio unitario: $" + props.price + ");%0a"),
                 orderId = orderId + ("00" + props.id)
             )        
         });
@@ -40,17 +40,16 @@ const CartForm = () => {
         const phone = document.getElementById("phone").value;
         const email = document.getElementById("email").value;
 
-        const url = 
-        
+        const url =         
             "https://api.whatsapp.com/send?phone=+543517054804&text=Hola%20TiendaNFT%20" +
-            "%0a" + "%0a" +
+            "%0a%0a" + 
             "Nombre: " + name + "%0a" +
             "Teléfono: " + phone + "%0a" +
-            "Email: " + email + "%0a" + "%0a" +
-            "Estoy interesado en los siguientes productos:" + "%0a" +
+            "Email: " + email + "%0a%0a" +
+            "Estoy interesado en los siguientes productos:%0a" +
             pedido + "%0a" + 
             "Precio total: $" + total + "%0a" +
-            "Nro de orden: " + orderId;
+            "Nro de orden: " + orderId
 
         window.open(url, '_blank').focus();
         setFromularioEnviado(true);
