@@ -27,6 +27,9 @@
 - [React-toastify](https://www.npmjs.com/package/react-toastify) (notificaciones).
 - [React-spinners](https://www.npmjs.com/package/react-spinners) (loaders)
 - [React-google-recaptcha](https://www.npmjs.com/package/react-google-recaptcha) (captcha de Google)
+- [Gh-pages](https://www.npmjs.com/package/gh-pages) (Github pages)
+
+![image](https://github.com/AxelMullins/Cryptoart-Axel-Mullins/blob/master/src/assets/gif/CryptoArt.gif)
 
 ## Comandos disponibles
 

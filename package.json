@@ -2,6 +2,7 @@
   "name": "cryptoart-axel-mullins",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://axelmullins.github.io/Cryptoart-Axel-Mullins/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -9,6 +10,7 @@
     "axios": "^0.22.0",
     "bootstrap": "^5.1.1",
     "firebase": "^8.2.8",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-rc.0",
     "react-dom": "^17.0.2",
@@ -20,6 +22,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
