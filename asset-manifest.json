@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Cryptoart-Axel-Mullins/static/css/main.df9ce534.chunk.css",
-    "main.js": "/Cryptoart-Axel-Mullins/static/js/main.ad29bc87.chunk.js",
-    "main.js.map": "/Cryptoart-Axel-Mullins/static/js/main.ad29bc87.chunk.js.map",
+    "main.js": "/Cryptoart-Axel-Mullins/static/js/main.b4293a95.chunk.js",
+    "main.js.map": "/Cryptoart-Axel-Mullins/static/js/main.b4293a95.chunk.js.map",
     "runtime-main.js": "/Cryptoart-Axel-Mullins/static/js/runtime-main.12d3c54d.js",
     "runtime-main.js.map": "/Cryptoart-Axel-Mullins/static/js/runtime-main.12d3c54d.js.map",
     "static/css/2.e49f5c05.chunk.css": "/Cryptoart-Axel-Mullins/static/css/2.e49f5c05.chunk.css",
@@ -19,6 +19,6 @@
     "static/css/2.e49f5c05.chunk.css",
     "static/js/2.1f0286f3.chunk.js",
     "static/css/main.df9ce534.chunk.css",
-    "static/js/main.ad29bc87.chunk.js"
+    "static/js/main.b4293a95.chunk.js"
   ]
 }
