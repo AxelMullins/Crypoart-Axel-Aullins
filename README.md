@@ -1,5 +1,7 @@
 # Ecommerce de NFT (Curso de React Js - CoderHouse)
 
+[Link al proyecto](https://axelmullins.github.io/Cryptoart-Axel-Mullins/)
+
 - Se trata de un proyecto tipo tienda online, en donde al ingresar en la Home se muestran todos los items/productos disponibles, los mismos están conectados por Firebase.
 - Al hacer navegar con el menú, se puede filtrar por categorías de productos (posee 2)
 - Si se le hace click a cualquier card, se dirige al detalle particular, en donde se pueden visualizar todas las características, definir la cantidad y agregar al carrito.
