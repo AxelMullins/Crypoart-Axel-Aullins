@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Cryptoart-Axel-Mullins/static/css/main.df9ce534.chunk.css",
+    "main.js": "/Cryptoart-Axel-Mullins/static/js/main.ad29bc87.chunk.js",
+    "main.js.map": "/Cryptoart-Axel-Mullins/static/js/main.ad29bc87.chunk.js.map",
+    "runtime-main.js": "/Cryptoart-Axel-Mullins/static/js/runtime-main.12d3c54d.js",
+    "runtime-main.js.map": "/Cryptoart-Axel-Mullins/static/js/runtime-main.12d3c54d.js.map",
+    "static/css/2.e49f5c05.chunk.css": "/Cryptoart-Axel-Mullins/static/css/2.e49f5c05.chunk.css",
+    "static/js/2.1f0286f3.chunk.js": "/Cryptoart-Axel-Mullins/static/js/2.1f0286f3.chunk.js",
+    "static/js/2.1f0286f3.chunk.js.map": "/Cryptoart-Axel-Mullins/static/js/2.1f0286f3.chunk.js.map",
+    "index.html": "/Cryptoart-Axel-Mullins/index.html",
+    "static/css/2.e49f5c05.chunk.css.map": "/Cryptoart-Axel-Mullins/static/css/2.e49f5c05.chunk.css.map",
+    "static/css/main.df9ce534.chunk.css.map": "/Cryptoart-Axel-Mullins/static/css/main.df9ce534.chunk.css.map",
+    "static/js/2.1f0286f3.chunk.js.LICENSE.txt": "/Cryptoart-Axel-Mullins/static/js/2.1f0286f3.chunk.js.LICENSE.txt",
+    "static/media/nftlogo.bc5b3486.png": "/Cryptoart-Axel-Mullins/static/media/nftlogo.bc5b3486.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.12d3c54d.js",
+    "static/css/2.e49f5c05.chunk.css",
+    "static/js/2.1f0286f3.chunk.js",
+    "static/css/main.df9ce534.chunk.css",
+    "static/js/main.ad29bc87.chunk.js"
+  ]
+}
